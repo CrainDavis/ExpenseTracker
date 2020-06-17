@@ -1,5 +1,5 @@
 # Expense Tracker (version 2)
-  ![GitHub repo size](https://img.shields.io/github/repo-size/CrainDavis/ExpenseTracker-ver2?style=for-the-badge) ![GitHub code size](https://img.shields.io/github/languages/code-size/CrainDavis/ExpenseTracker-ver2?color=gold&style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/CrainDavis/ExpenseTracker-ver2?color=green&style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/CrainDavis/ExpenseTracker-ver2?color=red&style=for-the-badge)
+  ![GitHub repo size](https://img.shields.io/github/repo-size/CrainDavis/ExpenseTracker?style=for-the-badge) ![GitHub code size](https://img.shields.io/github/languages/code-size/CrainDavis/ExpenseTracker?color=gold&style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/CrainDavis/ExpenseTracker?color=green&style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/CrainDavis/ExpenseTracker?color=red&style=for-the-badge)
 
 ---
 
