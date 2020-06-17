@@ -1,10 +1,10 @@
-# Expense Tracker (version 2)
+# Expense Tracker
   ![GitHub repo size](https://img.shields.io/github/repo-size/CrainDavis/ExpenseTracker?style=for-the-badge) ![GitHub code size](https://img.shields.io/github/languages/code-size/CrainDavis/ExpenseTracker?color=gold&style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/CrainDavis/ExpenseTracker?color=green&style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/CrainDavis/ExpenseTracker?color=red&style=for-the-badge)
 
 ---
 
 ## Description:
-This is a React application that allows a user to input any number of expenses (which includes the name/type of expense, dollar amount, and the date), and then view the total cost. This Expense Tracker also uses _LocalStorage_ to store the user's expenses so that they can be viewed again later.
+This is a React application that allows a user to input any number of expenses (which includes the name/type of expense, dollar amount, and the date), and then view the total cost. This Expense Tracker also uses _LocalStorage_ to store the user's expenses so that they can be viewed again later. See the [usage](#usage) or [demonstration](#demonstration) sections for a more detailed explanation on how to use this ExpenseTracker application.
 
 This application was created using _ReactJS_, as well as _React Hooks_ (_useState_ and _useEffect_), and LocalStorage.
 
@@ -17,6 +17,8 @@ This application was created using _ReactJS_, as well as _React Hooks_ (_useStat
 * [License](#license)
 * [Contributing](#contributing)
 * [Resources](#resources)
+* [Previous Versions](#previous-versions)
+* [Future Improvements](#future-improvements)
 * [Questions](#questions)
 
 ---
@@ -190,6 +192,18 @@ https://www.contributor-covenant.org/translations.
 * additional development resources:
   * [Traversy Media - "Build an Expense Tracker | React Hooks & Context API"](https://www.youtube.com/watch?v=XuFDcZABiDQ)
   * [Aman Mittal - "Build a Expense Tracker app with React Hooks and LocalStorage API"](https://dev.to/amanhimself/build-a-expense-tracker-app-with-react-hooks-and-localstorage-api-4lfj)
+
+---
+
+## Previous Versions:
+This ExpenseTracker originally used _class-based components_ to manage state. This was changed to using _React Hooks (useState)_ in order to simplify/shorten the code. The original version of this ExpenseTracker also did not have a function for storing data in any way. The updated version employs another _React Hook (useEffect)_ to save user input data in LocalStorage.
+
+---
+
+## Future Improvements:
+* Break down components further (ie, for each of the section headers, buttons, etc).
+* Allow user to manage their expenses by adding deposit and withdrawal functionality, rather than just adding up expenses.
+* Use a database such as MongoDB.
 
 ---
 
