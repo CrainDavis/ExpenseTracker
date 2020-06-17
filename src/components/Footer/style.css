@@ -1,0 +1,20 @@
+.page-footer {
+    background-color: green;
+    height: 70px;
+    text-align: center;
+    padding: 22px;
+}
+
+.footer-copyright {
+    color: lightgoldenrodyellow;
+}
+
+.link-name {
+    color: yellow;
+    font-weight: bold;
+}
+
+.link-name:hover {
+    color: gold;
+    text-decoration: none;
+}

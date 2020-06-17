@@ -1,0 +1,28 @@
+* {
+  justify-content: center;
+}
+
+.add-form-header {
+  color: darkgreen;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  background-color: #f6f6f6;
+  border: 2px solid green;
+}
+
+input.form-control::placeholder {
+  color: green;
+}
+
+.form-control:focus {
+  background-color: lightgoldenrodyellow;
+  color: darkgreen;
+  border: 2px solid yellow;
+}
+
+.btn-success {
+  width: 100%;
+}
