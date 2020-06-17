@@ -6,22 +6,22 @@ import "./style.css";
 
 // ==============================================================================
 
-function AddForm({ date, name, amount, handleDate, handleName, handleAmount, handleSubmitForm }) {
+function AddForm(props) {
   return (
-    <Container onSubmit={handleSubmitForm}>
+    <Container onSubmit={props.handleFormSubmit}>
       <h3 className="add-form-header">Add Expense:</h3>
       <form>
         <Row>
-        <Col size="3">
+          <Col size="3">
             <input
               className="form-control"
               type="text"
               placeholder="date (mm/dd/yyyy)"
               name="date"
               id="expenseDate"
-              value={date}
-              onChange={handleDate}
-            />
+              value={props.valueDate}
+              onChange={props.handleDateInput}
+            ></input>
           </Col>
           <Col size="3">
             <input
@@ -30,20 +30,20 @@ function AddForm({ date, name, amount, handleDate, handleName, handleAmount, han
               placeholder="expense name"
               name="name"
               id="expenseName"
-              value={name}
-              onChange={handleName}
-            />
+              value={props.valueName}
+              onChange={props.handleNameInput}
+            ></input>
           </Col>
           <Col size="3">
             <input
               className="form-control"
               type="text"
               placeholder="cost (US$)"
-              name="amount"
-              id="expenseAmount"
-              value={amount}
-              onChange={handleAmount}
-            />
+              name="cost"
+              id="expenseCost"
+              value={props.valueCost}
+              onChange={props.handleCostInput}
+            ></input>
           </Col>
           <Col size="3">
             <button className="btn btn-success" type="submit">

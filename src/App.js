@@ -1,104 +1,84 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
+
 import Header from "./components/Header";
-import BudgetTotals from "./components/BudgetTotals";
-import SpendingTable from "./components/SpendingTable";
-import AddForm from "./components/AddForm";
 import SectionBreak from "./components/SectionBreak";
 import SectionSpacing from "./components/SectionSpacing";
 import Footer from "./components/Footer";
 
-// ==============================================================================
+import AddForm from "./components/AddForm";
+import BudgetTotals from "./components/BudgetTotals";
+import SpendingTable from "./components/SpendingTable";
 
-// retrieve all previous expenses from local storage
-const allExpenses = localStorage.getItem("stored-expenses")
-  ? JSON.parse(localStorage.getItem("stored-expenses"))
-  : [];
+// =================================================================
 
-function App() {
-  const [expenses, setExpenses] = useState(allExpenses);
-  const [date, setDate] = useState("");
-  const [name, setName] = useState("");
-  const [amount, setAmount] = useState("");
-
-  // store expenses in LocalStorage
-  useEffect(() => {
-    localStorage.setItem("stored-expenses", JSON.stringify(expenses));
-  }, [expenses]);
-
-  // =================================
-
-  // entered date value
-  const handleDate = (event) => {
-    setDate(event.target.value);
+class App extends React.Component {
+  state = {
+    expenses: [],
+    date: "",
+    name: "",
+    cost: "",
   };
 
-  // entered name (type of expense) value
-  const handleName = (event) => {
-    setName(event.target.value);
+  handleDateInput = (event) => {
+    this.setState({ date: event.target.value });
   };
 
-  // entered amount (cost) value
-  const handleAmount = (event) => {
-    setAmount(event.target.value);
+  handleNameInput = (event) => {
+    this.setState({ name: event.target.value });
   };
 
-  // for "add expense" button
-  const handleSubmitForm = (event) => {
+  handleCostInput = (event) => {
+    this.setState({ cost: event.target.value });
+  };
+
+  handleFormSubmit = (event) => {
     event.preventDefault();
+    const allExpenses = this.state.expenses;
 
-    // make sure user has filled in all three fields
-    if (date !== "" && name !== "" && amount > 0) {
-      const expense = { date, name, amount };
+    let singleExpense = {
+      date: this.state.date,
+      name: this.state.name,
+      cost: this.state.cost,
+    };
 
-      setExpenses([...expenses, expense]);
+    allExpenses.push(singleExpense);
 
-      // empty input field values
-      setDate("");
-      setName("");
-      setAmount("");
+    console.log(allExpenses);
 
-    } else {
-      // otherwise, console log message
-      console.log("invalid input");
-    }
-  };
+    this.setState({ expenses: allExpenses });
 
-  // "clear expenses" button; empty out LocalStorage
-  const handleClearExpenses = (event) => {
-    event.preventDefault();
-    setExpenses([]);
-  };
+    this.setState({ date: "", name: "", cost: "" });
+    };
+  
+  // =======================================
 
-  // =================================
-
-  return (
-    <div>
-      <Header />
-      <div className="container">
-        <AddForm
-          date={date}
-          name={name}
-          amount={amount}
-          handleDate={handleDate}
-          handleName={handleName}
-          handleAmount={handleAmount}
-          handleSubmitForm={handleSubmitForm}
-        />
-        <SectionBreak />
-        <BudgetTotals expenses={expenses} />
-        <SectionBreak />
-        <SpendingTable
-          expenses={expenses}
-          handleClearExpenses={handleClearExpenses}
-        />
+  render() {
+    return (
+      <div>
+        <Header />
+        <div className="container">
+          <AddForm
+            handleDateInput={this.handleDateInput}
+            handleNameInput={this.handleNameInput}
+            handleCostInput={this.handleCostInput}
+            handleFormSubmit={this.handleFormSubmit}
+            valueDate={this.state.date}
+            valueName={this.state.name}
+            valueCost={this.state.cost}
+          />
+          <SectionBreak />
+          <BudgetTotals expenses={this.state.expenses} />
+          <SectionBreak />
+          <SpendingTable expenses={this.state.expenses} />
+        </div>
+        <SectionSpacing />
+        <Footer />
       </div>
-      <SectionSpacing />
-      <Footer />
-    </div>
-  );
+    );
+  }
 }
 
-// ==============================================================================
+// =================================================================
 
 export default App;
