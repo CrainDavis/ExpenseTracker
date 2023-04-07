@@ -204,12 +204,3 @@ This ExpenseTracker originally used _class-based components_ to manage state. Th
 * Break down components further (ie, for each of the section headers, buttons, etc).
 * Allow user to manage their expenses by adding deposit and withdrawal functionality, rather than just adding up expenses.
 * Use a database such as MongoDB.
-
----
-
-## Questions: 
-For any questions, please contact:
-
-![CrainDavis](https://avatars0.githubusercontent.com/u/59345254?v=4) 
-
-__[CrainDavis](https://github.com/CrainDavis)__ at chyna.davis11@gmail.com
